@@ -1,0 +1,6 @@
+body { margin: 0; font-family: system-ui, sans-serif; }
+header { padding: 0.5rem 1rem; background: #1f4e79; color: #fff; }
+header h1 { margin: 0; font-size: 1.2rem; }
+main { display: flex; flex-wrap: wrap; }
+#map { flex: 2 1 400px; height: 80vh; }
+#report-form { flex: 1 1 250px; display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; }
