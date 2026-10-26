@@ -57,3 +57,8 @@ Query parameters:
 Success: `200 OK`. Returns a JSON array of Report objects (newest first).
 If nothing matches, returns an empty array `[]`, not an error.
 EOF
+
+
+
+
+
