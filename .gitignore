@@ -1,0 +1,5 @@
+myEnv/
+__pycache__/
+*.db
+uploads/
+.vscode/
