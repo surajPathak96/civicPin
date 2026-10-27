@@ -35,7 +35,7 @@ Open http://127.0.0.1:8000 (app) or http://127.0.0.1:8000/docs (API explorer).
 | lat, lng | float | |
 | category, severity, status | string | see fixed values |
 | description | string | max 500 chars |
-| photo_path | string or null | |
+| photo_path | /uploads/<uuid>.jpg, or null | |
 | report_count | int | starts at 1, +1 per confirmation |
 | created_at | string | |
 | resolved_at | string or null | |
@@ -68,8 +68,8 @@ Open http://127.0.0.1:8000 (app) or http://127.0.0.1:8000/docs (API explorer).
 | POST /reports (add photo) | P1 | extra optional form field `photo` (JPEG/PNG, max 5 MB) | report object; 422 if wrong type or too large |
 | GET /reports?category=&severity=&status= | P2 | optional query filters | array of report objects |
 | GET /reports/nearby?lat=&lng=&category= | P2 | query params | open reports of that category within 50 m, each with extra `distance_m` |
-| POST /reports/{id}/confirm | P2 | none | updated report object (`report_count` + 1); 404 if missing |
-| PATCH /reports/{id} | P3 | JSON `{"status": "resolved"}`, header `X-Admin-Key` | updated report; sets `resolved_at`; 401 bad key, 404 missing |
+| POST /reports/{id}/confirm:404 | P2 | none | updated report object (`report_count` + 1); 404 if missing |
+| PATCH /reports/{id} | P3 | JSON `{"status": "resolved"}`, header `X-Admin-Key` | updated report; sets `resolved_at`; 401 bad key, 404 missing | 
 | DELETE /reports/{id} | P3 | header `X-Admin-Key` | 204; 401 bad key, 404 missing |
 | GET /stats | P3 | none | `{"total":int,"open":int,"resolved":int,"by_category":{...},"avg_days_to_resolve":number or null}` |
 
