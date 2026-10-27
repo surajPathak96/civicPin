@@ -77,3 +77,13 @@ Open http://127.0.0.1:8000 (app) or http://127.0.0.1:8000/docs (API explorer).
 1. Changing an endpoint's request or response means editing this README **in the same commit**.
 2. Only edit your own files (see the slice table); ask the owner for changes elsewhere.
 3. `main` must always run.
+
+## Decisions (Day 1)
+- Locality: <name> (center: <lat>, <lng>)
+- Slices: P1 <name> (reports core), P2 <name> (duplicates + list), P3 <name> (admin + stats)
+- Photo storage: local `backend/uploads/` for now; revisit on Day 4
+- Daily check-in: <time>; chat: <where>
+- Rubric / rules from organizers: <answers, or "still waiting">
+
+## Open decisions
+- Hosting provider and photo persistence (Day 4)
