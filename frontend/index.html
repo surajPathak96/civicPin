@@ -26,10 +26,36 @@
         <option value="high">High</option>
       </select>
       <textarea name="description" maxlength="500" placeholder="What's the problem?"></textarea>
+      <input type="file" name="photo" accept="image/jpeg,image/png">
       <button type="submit">Report issue</button>
     </form>
   </main>
+  <section id="list-section">
+  <div id="filters">
+    <select id="filter-category">
+      <option value="">All categories</option>
+      <option value="waterlogging">Waterlogging</option>
+      <option value="drain">Blocked drain</option>
+      <option value="pothole">Pothole</option>
+      <option value="garbage">Garbage</option>
+      <option value="other">Other</option>
+    </select>
+    <select id="filter-severity">
+      <option value="">All severities</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <select id="filter-status">
+      <option value="">All statuses</option>
+      <option value="open" selected>Open</option>
+      <option value="resolved">Resolved</option>
+    </select>
+  </div>
+  <ul id="report-list"></ul>
+</section>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="js/map.js"></script>
+  <script src="js/list.js"></script>
 </body>
 </html>
